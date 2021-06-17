@@ -1,32 +1,37 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid d-flex justify-content-start">
+        <router-link :to="{ name: 'Home' }" class="navbar-brand logo ms-1"></router-link>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <router-link :to="{ name: 'MyPage' }" class="nav-link">투자내역</router-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <router-view/>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<style scoped>
+  nav {
+      font-family: Noto Sans KR,sans-serif,AppleSDGothicNeo-Regular,Malgun Gothic,Dotum;
+      overflow: visible;
+      background: none;
+      background-color: #093687;
+      height: 60px;
+  }
 
-#nav {
-  padding: 30px;
-}
+  .logo {
+      width: 77px;
+      height: 17px;
+      background: transparent url(https://cdn.upbit.com/images/logo_upbit_sub.4d84cc7.svg) no-repeat 0 0;
+      text-indent: -1000em;
+      display: inline-block;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  .nav-link {
+    color: white;
+  }
 </style>
